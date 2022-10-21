@@ -1,0 +1,8 @@
+#Add new group
+sudo addgroup sftp_remote_access
+#create new dir
+sudo mkdir /var/res
+sudo chmod g+rx /var/res
+sudo mkdir -p /var/res/share
+sudo chmod g+rwx /var/res/share
+sudo chgrp -R sftp_remote_access /var/res
