@@ -8,3 +8,6 @@ sudo chmod g+rwx /var/res/share
 sudo chgrp -R sftp_remote_access /var/res
 #create new user, add to new group
 sudo adduser --ingroup sftp_remote_access store
+#add a usb, format to 'exfat', then
+sudo nano /etc/fstab
+UUID=<usb_uuid> /var/res/backup auto nosuid,nodev,nofail,x-gvfs-show 0 0
