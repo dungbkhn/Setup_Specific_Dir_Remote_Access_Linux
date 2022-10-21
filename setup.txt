@@ -1,4 +1,4 @@
-#Add new group
+#add new group
 sudo addgroup sftp_remote_access
 #create new dir
 sudo mkdir /var/res
