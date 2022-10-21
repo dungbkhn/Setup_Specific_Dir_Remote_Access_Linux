@@ -6,8 +6,16 @@ sudo chmod g+rx /var/res
 sudo mkdir -p /var/res/share
 sudo chmod g+rwx /var/res/share
 sudo chgrp -R sftp_remote_access /var/res
+sudo mkdir /var/res/backup
+#test ok
+sudo touch /var/res/backup/hello.txt
+#test not ok
+sudo echo 'sdfdfg' >> /var/res/backup/hello.txt
+#test ok: create shell file: echo 'sdfdfg' >> /var/res/backup/hello.txt then run shell file
+sudo ./test.sh
 #create new user, add to new group
 sudo adduser --ingroup sftp_remote_access store
 #add a usb, format to 'exfat', then
 sudo nano /etc/fstab
 UUID=<usb_uuid> /var/res/backup auto nosuid,nodev,nofail,x-gvfs-show 0 0
+#try to connect to remote by sftp using store account
